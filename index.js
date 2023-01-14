@@ -19,8 +19,6 @@ module.exports = client;
 
 client.slashCommands = new Collection();
 
-require("./handler")(client)
-
  client.logsbot = async function({ Member, Bot }, interaction){
   let canal = "992974816774737940";
   let lgsB = interaction.guild.channels.cache.get(canal);
