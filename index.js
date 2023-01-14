@@ -20,7 +20,7 @@ module.exports = client;
 client.slashCommands = new Collection();
 
  client.logsbot = async function({ Member, Bot }, interaction){
-  let canal = "992974816774737940";
+  let canal = "CHANNEL_ID";
   let lgsB = interaction.guild.channels.cache.get(canal);
 	
   const LogsB = new EmbedBuilder()
