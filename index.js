@@ -19,6 +19,7 @@ module.exports = client;
 
 client.slashCommands = new Collection();
 
+/* Log publico/public */
  client.logsbot = async function({ Member, Bot }, interaction){
   let canal = "CHANNEL_ID";
   let lgsB = interaction.guild.channels.cache.get(canal);
@@ -36,6 +37,7 @@ client.slashCommands = new Collection();
   lgsB.send({ embeds: [LogsB] })
 }
 
+/* Log privado 🔏 */
 client.logsMod = async function({ MemberM, PrefixM, InviteM, Id, DescM, BotM }, interaction){
   
   let psc = "CHANNEL_ID";
@@ -55,6 +57,7 @@ client.logsMod = async function({ MemberM, PrefixM, InviteM, Id, DescM, BotM }, 
   cann.send({ content: "MENTION", embeds: [LogsM] })
 }
 
+/* Bot approved */
  client.approve = async function({ Member, Bot }, interaction){
   let cba = "CHANNEL_ID";
   let lgsApr = interaction.guild.channels.cache.get(cba);
@@ -72,6 +75,7 @@ client.logsMod = async function({ MemberM, PrefixM, InviteM, Id, DescM, BotM }, 
   lgsApr.send({ content: `<@${Member.id}>`, embeds: [approvedB] })
 }
 
+/* Bot Deny */
 client.deny = async function({ Member, Bot }, interaction){
   let cbd = "CHANNEL_ID";
   let lgsD = interaction.guild.channels.cache.get(cbd);
@@ -90,7 +94,7 @@ client.deny = async function({ Member, Bot }, interaction){
   lgsD.send({ content: `<@${Member.id}>`, embeds: [denyB] })
 }
 
-// Slash commands
+/* Slash command Handler */
 for (const subFolder of readdirSync(`${__dirname}/slashCommands/`)) {
     for (const fileName of readdirSync(`${__dirname}/slashCommands/${subFolder}/`)) {
         let file = require(`${__dirname}/slashCommands/${subFolder}/${fileName}`);
