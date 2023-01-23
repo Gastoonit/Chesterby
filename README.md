@@ -1,6 +1,6 @@
 # 🐱 ▪︎ Chesterby (Mail Bot)
 ## 📄 | Descripción Breve:
-- (</>) Chesterby es un bot con un sistema de modals para "agregar" bots a una lista. Para que "Managers" puedan decidir si aprobarlos o denegarlos. (Adaptable para una bot-list)
+- (</>) Chesterby es un bot con un sistema de modals para "agregar" bots a una lista. Para que "Managers" puedan decidir si aprobarlos o denegarlos. (Adaptable para una bot list)
 - (🌟) Si le dan estrellas quizás en un futuro lo mejorare un poco más al bot.
 ## ✅️ | Adicional:
 - (+) Recuerda agregar el token de tu bot al archivo JSON.
