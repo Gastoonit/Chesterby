@@ -1,11 +1,16 @@
-const client = require('../index.js') 
+const config = require('../config.json')
+const { Events } = require('discord.js')
 
-client.on("ready", async () => {
-    
-  /* Slash Commands */
-	var slashCommands = client.slashCommands.map(x => x)
-  await client.guilds.cache.get("GUILD_ID").commands.set(slashCommands);
-    
-   console.log(`${client.user.tag} - ✅️`);
+module.exports = {
+	name: Events.Ready,
+	emiter: "once",
+	run: async (client) => {
 
-});
+		/* Slash Commands */
+		const slashCommands = client.slashCommands.map(x => x)
+		await client.guilds.cache.get(config.GUILD_ID).commands.set(slashCommands);
+
+		console.log("✅️");
+
+	}
+};

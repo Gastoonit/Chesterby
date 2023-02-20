@@ -1,15 +1,17 @@
-const client = require('../index.js');
+const { Events } = require('discord.js');
 
-client.on("interactionCreate", async (interaction) => {
+module.exports = {
+	name: Events.InteractionCreate,
+	emiter: "on",
+	run: async (client, interaction) => {
 
-  if (interaction.isChatInputCommand()) {
-  
-  const command = client.slashCommands.get(interaction.commandName);
-	if(!command) return interaction.reply("Ha ocurrido un error.")
-  
-  if(!interaction.member.permissions.has(command.permissions || [])) return interaction.reply({ content: "<:tick_err:887739719247626380> No tienes permisos para usar el comando." })
-		
-  command.run(client, interaction)
-  
-  }
-});
+		if (interaction.isChatInputCommand()) {
+
+			const command = client.slashCommands.get(interaction.commandName);
+			if (!command) return interaction.reply("Ha ocurrido un error.")
+
+			await command.run(client, interaction)
+
+		}
+	}
+}

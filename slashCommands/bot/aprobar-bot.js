@@ -1,10 +1,10 @@
 const Discord = require('discord.js');
-const { ApplicationCommandType, ApplicationCommandOptionType } = require('discord.js');
+const { ApplicationCommandOptionType } = require('discord.js');
+const config = require('../../config.json');
 
 module.exports = {
     name: "aprobar-bot",
-    description: "Aprueba un bot.",
-    // permissions: ["ADMINISTRATOR"],
+    description: "✅️ - Aprueba un bot.",
     options: [
       {
         name: "miembro",
@@ -27,10 +27,10 @@ module.exports = {
     ],
     run: async (client, interaction) => {
 
-	if(!interaction.member.roles.cache.has("ROLE_ID")) return interaction.followUp({ content: `<:tick_err:887739719247626380> No tienes permisos para usar este comando.`, ephemeral: true })
-  var member = interaction.options.getUser('miembro');
-  var bot = interaction.options.getString('bot');
-  var adicional = interaction.options.getString('adicional');
+	if(!interaction.member.roles.cache.has(config.ROLE_ID)) return interaction.reply({ content: `No tienes permisos para usar este comando.`, ephemeral: true })
+  const member = interaction.options.getUser('miembro');
+  const bot = interaction.options.getString('bot');
+  const adicional = interaction.options.getString('adicional');
   
   await member.send(`¡${member.tag} Su bot ha sido aceptado en **That**!\n\nAdicional: ${adicional || 'No hay nada adicional.' }`).catch((err) => {});
   

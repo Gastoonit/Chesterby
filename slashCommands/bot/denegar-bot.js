@@ -1,10 +1,10 @@
 const Discord = require('discord.js');
-const { ApplicationCommandType, ApplicationCommandOptionType } = require('discord.js');
+const { ApplicationCommandOptionType } = require('discord.js');
+const config = require('../../config.json');
 
 module.exports = {
     name: "denegar-bot",
-    description: "Rechaza un bot.",
-   // permissions: ["ADMINISTRATOR"],
+    description: "❗️ - Rechaza un bot.",
     options: [
       {
         name: "miembro",
@@ -27,10 +27,10 @@ module.exports = {
     ],
     run: async (client, interaction) => {
 
-	if(!interaction.member.roles.cache.has("ROLE_ID")) return interaction.followUp({ content: `<:tick_err:887739719247626380> No tienes permisos para usar este comando.`, ephemeral: true })
-  var member = interaction.options.getUser('miembro');
-  var bot = interaction.options.getString('bot');
-  var razón = interaction.options.getString('razón');
+  if(!interaction.member.roles.cache.has(config.ROLE_ID)) return interaction.followUp({ content: `No tienes permisos para usar este comando.`, ephemeral: true })
+  const member = interaction.options.getUser('miembro');
+  const bot = interaction.options.getString('bot');
+  const razón = interaction.options.getString('razón');
   
   await member.send(`${member.tag} Su bot ha sido rechazado en **That**.\n\nRazón: ${razón || 'N/A' }`).catch((err) => {});
   

@@ -1,3 +1,10 @@
 {
-  "token":"TOKEN_BOT"
+  "BOT_TOKEN": "TOKEN",
+  "BOT_ID": "ID",
+  "ROLE_ID": "ID",
+  "GUILD_ID": "ID",
+  "CHANNEL_1": "ID",
+  "CHANNEL_2": "ID",
+  "CHANNEL_3": "ID",
+  "CHANNEL_4": "ID"
 }
