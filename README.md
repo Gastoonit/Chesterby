@@ -7,7 +7,7 @@
 - (🌟) Si le dan estrellas quizás en un futuro lo mejorare un poco más al bot.
 ## ✅️ | Adicional:
 - (+) Recuerda agregar el token de tu bot al archivo JSON.
-```
+```json
  {
   "BOT_TOKEN": "TOKEN",
   "BOT_ID": "ID",
