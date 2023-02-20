@@ -1,8 +1,6 @@
-const Discord = require('discord.js');
-const config = require('./config.json');
-const fs = require('node:fs');
-const { readdirSync } = require('node:fs');
 const { Client, Collection, EmbedBuilder, GatewayIntentBits } = require("discord.js");
+const { readdirSync } = require('node:fs');
+const config = require('./config.json');
 const client = new Client({
 	intents: [
 		GatewayIntentBits.Guilds,
